@@ -6,9 +6,6 @@
       "mocha",
       "node"
     ],
-    "typeRoots": [
-      "./node_modules/@types",
-    ],
     "noImplicitAny": true,
     "skipLibCheck": true,
     "moduleResolution": "node",

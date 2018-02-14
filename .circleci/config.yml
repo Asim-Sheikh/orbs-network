@@ -5,7 +5,7 @@ jobs:
     steps:
       - checkout
       - run: docker build -t ${DOCKER_IMAGE}:$(echo $CIRCLE_BRANCH | sed -e 's/\//-/g') .
-      - run: npm install -g yarn typescript
+      - run: npm install -g yarn
       - run: DOCKER_TAG=$(echo $CIRCLE_BRANCH | sed -e 's/\//-/g') ./docker-test.sh
       - run: $(aws ecr get-login --no-include-email --region us-west-2)
       - run: docker push ${DOCKER_IMAGE}:$(echo $CIRCLE_BRANCH | sed -e 's/\//-/g')

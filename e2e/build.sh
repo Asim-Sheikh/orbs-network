@@ -1,3 +1,3 @@
 #!/bin/bash -e
-yarn install
+yarn install --production=false
 yarn run build
